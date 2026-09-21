@@ -1,0 +1,56 @@
+.other {
+  margin-top: 26px;
+  padding: 28px 30px;
+  border-radius: var(--r-lg);
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.other h3 { font-size: 1.2rem; }
+
+.other p { margin-top: 8px; color: var(--ink-2); font-size: 0.94rem; max-width: 62ch; }
+
+.otherLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.otherLink:hover { color: var(--red); }
+
+.formats {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.format {
+  padding: 26px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.format h3 { font-size: 1.15rem; }
+.format p { margin-top: 9px; color: var(--ink-2); font-size: 0.93rem; }
+
+.formatIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--cream-deep);
+  color: var(--red);
+  margin-bottom: 18px;
+}
+
+@media (min-width: 860px) { .formats { grid-template-columns: repeat(3, 1fr); } }

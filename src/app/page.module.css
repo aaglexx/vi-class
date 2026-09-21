@@ -1,0 +1,48 @@
+.soft {
+  background: var(--cream-deep);
+  border-block: 1px solid var(--line);
+}
+
+.note {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 18px 22px;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line-strong);
+  color: var(--ink-2);
+  font-size: 0.94rem;
+}
+
+.note a {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+}
+
+.faqWrap {
+  display: grid;
+  gap: 32px;
+}
+
+.faqAside {
+  align-self: start;
+  padding: 28px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.faqAside h3 { font-size: 1.22rem; }
+
+.faqAside p { margin-top: 10px; color: var(--ink-2); font-size: 0.94rem; }
+
+.faqAside > a { margin-top: 20px; }
+
+.ctaSection { padding-bottom: clamp(70px, 6vw, 120px); }
+
+@media (min-width: 980px) {
+  .faqWrap { grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.9fr); gap: 44px; }
+}

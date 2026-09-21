@@ -1,0 +1,149 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(24px, 3vw, 46px);
+  padding-bottom: clamp(30px, 3vw, 54px);
+  overflow: hidden;
+}
+
+.inner { position: relative; z-index: 1; }
+
+/* ---- верхняя строка: подпись и «реплики» ---- */
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.bubbles {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  max-width: 440px;
+}
+
+.bubble {
+  padding: 13px 20px;
+  border-radius: 18px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  opacity: 0;
+}
+
+.bubbleLight {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  border-bottom-right-radius: 5px;
+}
+
+.bubbleBlue {
+  background: var(--red);
+  color: #ffffff;
+  border-bottom-right-radius: 5px;
+}
+
+/* ---- центр: коллаж и плавающая кнопка ---- */
+
+.middle {
+  position: relative;
+  margin-top: clamp(10px, 2vw, 26px);
+}
+
+.visual { opacity: 0; }
+
+.ctaFloat {
+  position: relative;
+  z-index: 6;
+  margin-top: 4px;
+  opacity: 0;
+}
+
+.ctaBtn { gap: 22px; }
+
+.plus {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+/* ---- гигантский заголовок ---- */
+
+.title {
+  margin-top: clamp(8px, 1.5vw, 18px);
+  font-size: clamp(3.1rem, 0.2rem + 13.3vw, 13rem);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+}
+
+.mask > span { display: block; }
+
+/* ---- подпись под заголовком ---- */
+
+.bottom {
+  margin-top: clamp(20px, 2.4vw, 34px);
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.sub {
+  max-width: 52ch;
+  color: var(--ink-2);
+  font-size: clamp(0.97rem, 0.93rem + 0.25vw, 1.08rem);
+  opacity: 0;
+}
+
+.actions { opacity: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.trust {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  opacity: 0;
+}
+
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  color: var(--ink-2);
+}
+
+
+
+@media (min-width: 720px) {
+  .ctaFloat {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    margin-top: 0;
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 980px) {
+  .bottom {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 40px;
+  }
+  .actions { justify-content: flex-end; }
+}

@@ -1,0 +1,62 @@
+.field {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 132%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+}
+
+.blob {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(70px);
+  mix-blend-mode: multiply;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.blue {
+  top: 26%;
+  left: 24%;
+  width: min(760px, 88vw);
+  height: min(760px, 88vw);
+  background: radial-gradient(circle at 50% 50%, rgba(223, 3, 13, 0.20), rgba(223, 3, 13, 0) 68%);
+}
+
+.sand {
+  top: 18%;
+  left: 72%;
+  width: min(700px, 84vw);
+  height: min(700px, 84vw);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0) 68%);
+}
+
+.mist {
+  top: 62%;
+  left: 54%;
+  width: min(640px, 80vw);
+  height: min(640px, 80vw);
+  background: radial-gradient(circle at 50% 50%, rgba(223, 3, 13, 0.12), rgba(223, 3, 13, 0) 70%);
+}
+
+.deep {
+  top: 70%;
+  left: 12%;
+  width: min(560px, 70vw);
+  height: min(560px, 70vw);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0) 70%);
+}
+
+/* еле заметная «тетрадная» сетка поверх свечения */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 104px 104px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 10%, transparent 75%);
+}

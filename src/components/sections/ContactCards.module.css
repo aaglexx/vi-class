@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  position: relative;
+  padding: 26px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+.card:hover .icon {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.card:hover .handle,
+.card:hover .hint,
+.card:hover .arrow { color: rgba(255, 255, 255, 0.72); }
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--cream-deep);
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.label {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+}
+
+.handle { margin-top: 4px; color: var(--ink-2); font-size: 0.93rem; }
+
+.hint { margin-top: 12px; font-size: 0.83rem; color: var(--ink-3); }
+
+.arrow {
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  color: var(--ink-3);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+.card:hover .arrow { transform: translate(4px, -4px); color: var(--ink); }
+
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }

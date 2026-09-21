@@ -1,0 +1,89 @@
+.stage {
+  position: relative;
+  width: 100%;
+  min-height: clamp(300px, 34vw, 460px);
+}
+
+/* ---- предметы ---- */
+
+.item {
+  position: absolute;
+  opacity: 0;
+  will-change: transform;
+}
+
+.itemInner {
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.item:hover .itemInner { transform: scale(1.07) rotate(-3deg); }
+
+.item svg,
+.item img {
+  width: 100%;
+  height: auto;
+  /* белая обводка «вырезанного стикера» + мягкая тень */
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.12));
+}
+
+/* ---- рамка выделения ---- */
+
+.frame {
+  position: absolute;
+  inset: 12% 1% 6%;
+  border: 1px solid #3d8bfd;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border: 1px solid #3d8bfd;
+}
+
+.frameLabel {
+  position: absolute;
+  top: -22px;
+  left: -1px;
+  padding: 2px 8px;
+  background: #3d8bfd;
+  color: #fff;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.coinSlot {
+  position: absolute;
+  top: -4%;
+  left: 38%;
+  z-index: 3;
+}
+
+.cursor {
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
+  opacity: 0;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+@media (max-width: 900px) {
+  .stage { min-height: 300px; }
+  .coinSlot { top: -6%; left: 42%; transform: scale(0.8); }
+  .desktopOnly { display: none; }
+  .frameLabel { font-size: 0.56rem; }
+}
+
+@media (max-width: 560px) {
+  .stage { min-height: 260px; }
+  .frameLabel { display: none; }
+  .frame { inset: 14% 2% 8%; }
+}

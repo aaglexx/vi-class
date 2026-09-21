@@ -1,0 +1,111 @@
+.wrap { position: relative; }
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.item {
+  position: relative;
+  padding-left: 66px;
+  opacity: 0;
+}
+
+.num {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--grey);
+  color: var(--ink);
+  font-family: var(--font-display), sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.45rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.text {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.detail {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: var(--ink-3);
+  max-width: 44ch;
+}
+
+/* линия-«дорожка» */
+.lineBase,
+.line {
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  border-radius: 2px;
+}
+
+.lineBase {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--line-strong) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.line {
+  background: var(--ink);
+  transform-origin: top center;
+  opacity: 0.55;
+}
+
+@media (min-width: 900px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  .item { padding-left: 0; padding-top: 74px; }
+
+  .num { top: 0; left: 0; }
+
+  .lineBase,
+  .line {
+    left: 24px;
+    right: 24px;
+    top: 24px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+
+  .lineBase {
+    background: repeating-linear-gradient(
+      to right,
+      var(--line-strong) 0 6px,
+      transparent 6px 12px
+    );
+  }
+
+  .line { transform-origin: left center; }
+}

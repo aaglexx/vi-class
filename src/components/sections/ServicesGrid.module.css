@@ -1,0 +1,153 @@
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+  counter-reset: service;
+}
+
+.card {
+  position: relative;
+  padding: 26px 24px 28px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease,
+    border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  counter-increment: service;
+}
+
+.card::after {
+  content: "(0" counter(service) ")";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+.card:hover .text,
+.card:hover .list li,
+.card:hover .timing { color: rgba(255, 255, 255, 0.72); }
+
+.card:hover .list li { border-color: rgba(255, 255, 255, 0.18); }
+.card:hover .list li::before { color: rgba(255, 255, 255, 0.5); }
+.card::after { transition: color 0.3s ease; }
+.card:hover::after { color: rgba(255, 255, 255, 0.5); }
+
+.card:hover .link {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.card:hover .link:hover { background: #fff; color: var(--ink); border-color: #fff; }
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  margin-bottom: 26px;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .icon {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+  transform: rotate(-6deg);
+}
+
+.title {
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+.text {
+  margin-top: 12px;
+  color: var(--ink-2);
+  font-size: 0.93rem;
+  max-width: 40ch;
+}
+
+.list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.87rem;
+  color: var(--ink-2);
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.list svg { flex-shrink: 0; margin-top: 3px; color: var(--ink); }
+
+.foot {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.timing {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 9px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-pill);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.link:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.link:hover svg { transform: translateX(3px); }
+.link svg { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,61 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(70px, 9vw, 140px);
+  text-align: center;
+}
+
+.wash {
+  position: absolute;
+  inset: -50% -10% auto;
+  height: 160%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 40% 34% at 50% 30%, rgba(0, 0, 0, 0.08), transparent 70%),
+    radial-gradient(ellipse 32% 28% at 74% 40%, rgba(223, 3, 13, 0.10), transparent 70%);
+  filter: blur(26px);
+}
+
+.inner { position: relative; max-width: 620px; }
+.inner { margin-inline: auto; }
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--grey);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+
+.text {
+  margin-top: 18px;
+  color: var(--ink-2);
+  font-size: 1.03rem;
+  line-height: 1.6;
+}
+
+.actions {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.other {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+}
+
+.other a { color: var(--ink); border-bottom: 1px solid transparent; }
+.other a:hover { border-color: currentColor; }

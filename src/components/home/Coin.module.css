@@ -1,0 +1,8 @@
+.coin {
+  display: block;
+  will-change: transform;
+}
+
+.coin svg {
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18));
+}

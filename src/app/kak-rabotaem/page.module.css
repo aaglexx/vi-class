@@ -1,0 +1,55 @@
+.soft { background: var(--cream-deep); border-block: 1px solid var(--line); }
+
+.split { display: grid; gap: 40px; }
+
+.rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+
+.rules li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.97rem;
+  color: var(--ink-2);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rules li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--ink-3);
+}
+
+.timeline {
+  align-self: start;
+  padding: 30px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.timelineTitle { font-size: 1.2rem; margin-bottom: 22px; }
+
+.timeline ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+
+.timeline li {
+  display: grid;
+  gap: 5px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line-strong);
+}
+
+.when {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.what { font-size: 0.93rem; color: var(--ink-2); }
+
+@media (min-width: 980px) {
+  .split { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr); gap: 56px; }
+}
