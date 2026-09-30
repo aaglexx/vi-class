@@ -30,7 +30,7 @@ export const contacts: Contact[] = [
     key: 'telegram',
     label: 'Telegram',
     handle: '@@zzz0zzz_0',
-    href: 'https://t.me/@zzz0zzz_0',
+    href: 'https://t.me/zzz0zzz_0',
     visible: true,
   },
   {
