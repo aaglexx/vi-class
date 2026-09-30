@@ -29,8 +29,8 @@ export const contacts: Contact[] = [
   {
     key: 'telegram',
     label: 'Telegram',
-    handle: '@username',
-    href: 'https://t.me/username',
+    handle: '@@zzz0zzz_0',
+    href: 'https://t.me/@zzz0zzz_0',
     visible: true,
   },
   {
@@ -43,22 +43,22 @@ export const contacts: Contact[] = [
   {
     key: 'whatsapp',
     label: 'WhatsApp',
-    handle: '+7 900 000-00-00',
-    href: 'https://wa.me/79000000000',
+    handle: '+7 909 910-04-43',
+    href: 'https://wa.me/79099100443',
     visible: true,
   },
   {
     key: 'phone',
     label: 'Телефон',
-    handle: '+7 900 000-00-00',
-    href: 'tel:+79000000000',
+    handle: '+7 909 910-04-43',
+    href: 'tel:+79099100443',
     visible: false,
   },
   {
     key: 'email',
     label: 'Почта',
-    handle: 'hello@example.com',
-    href: 'mailto:hello@example.com',
+    handle: 'ceo@meetory.co',
+    href: 'mailto:ceo@meetory.co',
     visible: false,
   },
 ];
